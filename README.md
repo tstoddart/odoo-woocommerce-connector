@@ -7,4 +7,4 @@ Module to synchronise Odoo and WooCommerce. Not yet useable, under development.
 * OAuth for WooCommerce API
 
 # Credit
-Forked from the release from Saad Musjeeb released under the MIT licence.
+Forked from Saad Musjeeb's release on the Odoo App Store under the MIT licence.
