@@ -1,0 +1,77 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="tree_view_woocommerce_customers">
+            <field name="name">WooCommerce Customers List</field>
+            <field name="model">woocommerce.customers</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="customer_seq"/>
+                    <field name="customer_id"/>
+                    <field name="first_name"/>
+                    <field name="last_name"/>
+                    <field name="role"/>
+                    <field name="username"/>
+                    <field name="email"/>
+                    <field name="country"/>
+                    <field name="city"/>
+                    <field name="phone"/>
+                    <field name="zip"/>
+                    <field name="street"/>
+                    <field name="street2"/>
+                    <field name="date_created"/>
+                    <field name="date_modified"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="form_view_woocommerce_products">
+            <field name="name">WooCommerce Customers Form</field>
+            <field name="model">woocommerce.customers</field>
+            <field name="arch" type="xml">
+                <form string="WooCommerce Customers Form">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="customer_seq"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="customer_id"/>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="role"/>
+                            <field name="username"/>
+                            <field name="email"/>
+                            <field name="country"/>
+                            <field name="city"/>
+                            <field name="phone"/>
+                            <field name="zip"/>
+                            <field name="street"/>
+                            <field name="street2"/>
+                            <field name="date_created"/>
+                            <field name="date_created_gmt"/>
+                            <field name="date_modified"/>
+                            <field name="date_modified_gmt"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="action_woocommerce_customers">
+            <field name="name">WooCommerce Customers</field>
+            <field name="res_model">woocommerce.customers</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- menu categories -->
+        <menuitem name="Customers" id="woocommerce_customers_menu" parent="woocommerce_menu_root" action="action_woocommerce_customers"/>
+        <menuitem name="Customers List" id="woocommerce_customers_list" parent="woocommerce_customers_menu" action="action_woocommerce_customers"/>
+
+
+    </data>
+</odoo>

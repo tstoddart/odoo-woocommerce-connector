@@ -1,0 +1,99 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="tree_view_woocommerce">
+      <field name="name">WooCommerce Configuration List</field>
+      <field name="model">woocommerce.configuration</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="con_seq"/>
+          <field name="con_name"/>
+          <field name="con_url"/>
+          <field name="con_endpoint"/>
+          <field name="consumer_key"/>
+          <field name="consumer_secret" password="True"/>
+          <field name="user_name"/>
+          <field name="key_permissions"/>
+          <field name="last_synced"/>
+          <button type="object" name="sync_woocommerce" string="Sync"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="form_view_woocommerce">
+      <field name="name">WooCommerce Configuration Form</field>
+      <field name="model">woocommerce.configuration</field>
+      <field name="arch" type="xml">
+        <form string="WooCommerce Configuration Form">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                <field name="con_seq"/>
+              </h1>
+            </div>
+            <group>
+              <field name="con_name"/>
+              <field name="con_url"/>
+              <field name="con_endpoint"/>
+              <field name="consumer_key"/>
+              <field name="consumer_secret" password="True"/>
+              <field name="user_name"/>
+              <field name="key_id"/>
+              <field name="key_permissions"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="action_woocommerce_configuration">
+      <field name="name">WooCommerce</field>
+      <field name="res_model">woocommerce.configuration</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- <record model="ir.actions.act_window" id="action_woocommerce_orders">
+      <field name="name">WooCommerce</field>
+      <field name="res_model">woocommerce.configuration</field>
+      <field name="view_mode">tree,form</field>
+    </record> -->
+
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="woocommerce_connector.action_server">
+      <field name="name">woocommerce_connector server</field>
+      <field name="model_id" ref="model_woocommerce_connector_woocommerce_connector"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="WooCommerce" id="woocommerce_menu_root" sequence="-2"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Configuration" id="woocommerce_configuration_menu" parent="woocommerce_menu_root" action="action_woocommerce_configuration"/>
+
+    <!-- <menuitem name="Orders" id="woocommerce_orders_menu" parent="woocommerce_menu_root"/>
+    
+    <menuitem name="Order List" id="woocommerce_orders_list" parent="woocommerce_orders_menu" action="action_woocommerce_orders"/> -->
+    <!-- <menuitem name="Menu 2" id="woocommerce_connector.menu_2" parent="woocommerce_connector.menu_root"/> -->
+
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="woocommerce_connector.menu_1_list" parent="woocommerce_connector.menu_1" action="woocommerce_connector.action_window"/>
+    <menuitem name="Server to list" id="woocommerce_connector" parent="woocommerce_connector.menu_2" action="woocommerce_connector.action_server"/>
+-->
+  </data>
+</odoo>

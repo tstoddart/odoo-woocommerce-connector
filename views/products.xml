@@ -1,0 +1,107 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="tree_view_woocommerce_products">
+            <field name="name">WooCommerce Products List</field>
+            <field name="model">woocommerce.products</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="product_seq"/>
+                    <field name="product_id"/>
+                    <field name="name"/>
+                    <field name="date_created"/>
+                    <field name="status"/>
+                    <field name="price"/>
+                    <field name="sale_price"/>
+                    <field name="sku"/>
+                    <field name="stock_quantity"/>
+                    <field name="stock_status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="form_view_woocommerce_products">
+            <field name="name">WooCommerce Products Form</field>
+            <field name="model">woocommerce.products</field>
+            <field name="arch" type="xml">
+                <form string="WooCommerce Products Form">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="product_seq"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="product_seq"/>
+                            <field name="product_id"/>
+                            <field name="name"/>
+                            <field name="slug"/>
+                            <field name="permalink"/>
+                            <field name="date_created"/>
+                            <field name="date_created_gmt"/>
+                            <field name="date_modified"/>
+                            <field name="date_modified_gmt"/>
+                            <field name="type"/>
+                            <field name="status"/>
+                            <field name="featured"/>
+                            <field name="catalog_visibility"/>
+                            <field name="description"/>
+                            <field name="short_description"/>
+                            <field name="sku"/>
+                            <field name="price"/>
+                            <field name="regular_price"/>
+                            <field name="sale_price"/>
+                            <field name="date_on_sale_from"/>
+                            <field name="date_on_sale_from_gmt"/>
+                            <field name="date_on_sale_to"/>
+                            <field name="date_on_sale_to_gmt"/>
+                            <field name="price_html"/>
+                            <field name="on_sale"/>
+                            <field name="purchasable"/>
+                            <field name="total_sales"/>
+                            <field name="virtual"/>
+                            <field name="downloadable"/>
+                            <field name="downloads"/>
+                            <field name="download_limit"/>
+                            <field name="download_expiry"/>
+                            <field name="external_url"/>
+                            <field name="button_text"/>
+                            <field name="tax_class"/>
+                            <field name="manage_stock"/>
+                            <field name="stock_quantity"/>
+                            <field name="stock_status"/>
+                            <field name="backorders"/>
+                            <field name="backordered"/>
+                            <field name="sold_individually"/>
+                            <field name="weight"/>
+                            <field name="shipping_required"/>
+                            <field name="shipping_taxable"/>
+                            <field name="shipping_class"/>
+                            <field name="shipping_class_id"/>
+                            <field name="reviews_allowed"/>
+                            <field name="average_rating"/>
+                            <field name="rating_count"/>
+                            <field name="parent_id"/>
+                            <field name="purchase_note"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="action_woocommerce_products">
+            <field name="name">WooCommerce Products</field>
+            <field name="res_model">woocommerce.products</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- menu categories -->
+        <menuitem name="Products" id="woocommerce_products_menu" parent="woocommerce_menu_root" action="action_woocommerce_products"/>
+        <menuitem name="Products List" id="woocommerce_products_list" parent="woocommerce_products_menu" action="action_woocommerce_products"/>
+
+
+    </data>
+</odoo>

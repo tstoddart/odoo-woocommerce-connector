@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_woocommerce_connector,woocommerce.configuration,model_woocommerce_configuration,,1,1,1,1
+access_woocommerce_orders,woocommerce.orders,model_woocommerce_orders,,1,1,1,1
+access_woocommerce_orders_billing,woocommerce.orders.billing,model_woocommerce_orders_billing,,1,1,1,1
+access_woocommerce_products,woocommerce.products,model_woocommerce_products,,1,1,1,1
+access_woocommerce_customers,woocommerce.customers,model_woocommerce_customers,,1,1,1,1
